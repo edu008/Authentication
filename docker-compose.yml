@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+  token_service:
+    build: ./token_service
+    ports:
+      - "8001:8000"
+
+  username_password_service:
+    build: ./username_password_service
+    ports:
+      - "8002:8000"
+
+  service_using_token:
+    build: ./sample_services/service_using_token
+
+  service_using_username_password:
+    build: ./sample_services/service_using_username_password
